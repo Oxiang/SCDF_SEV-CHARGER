@@ -3,7 +3,7 @@ For SCDF Hackathon 2021
 
 ## What does this repository contain?
 
-Web Application that live streams the gas and temperature sensors value, the warning level, the video feed for IR and RBG as well as the location.
+Web Application that live streams the gas (CH4 levels) and temperature sensors value, the warning level, the video feed for IR and RBG as well as the location.
 
 ## How to use?
 
@@ -36,7 +36,7 @@ The overall architecture is broken down into three different segments: Onsite, I
 ### IBM Cloud Services
 
 - IBM Watson for IoT data storage
-- IBM Bare Metal Servers to host the React Web Application for live-streaming
+- IBM Cloud Foundry to host the React Web Application for live-streaming
 - IBM Cloud functions as a serverless backend to activate push notification
 - IBM Push Notification to send messages to Response Team on high warning level
 
