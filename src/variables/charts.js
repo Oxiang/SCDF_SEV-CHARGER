@@ -70,6 +70,56 @@ let chart1_2_options = {
   },
 };
 
+let chart1_2_options_3 = {
+  maintainAspectRatio: false,
+  legend: {
+    display: false,
+  },
+  tooltips: {
+    backgroundColor: "#f5f5f5",
+    titleFontColor: "#333",
+    bodyFontColor: "#666",
+    bodySpacing: 4,
+    xPadding: 12,
+    mode: "nearest",
+    intersect: 0,
+    position: "nearest",
+  },
+  responsive: true,
+  scales: {
+    yAxes: [
+      {
+        barPercentage: 1.6,
+        gridLines: {
+          drawBorder: false,
+          color: "rgba(29,140,248,0.0)",
+          zeroLineColor: "transparent",
+        },
+        ticks: {
+          suggestedMin: 15,
+          suggestedMax: 1,
+          padding: 20,
+          fontColor: "#9a9a9a",
+        },
+      },
+    ],
+    xAxes: [
+      {
+        barPercentage: 1.6,
+        gridLines: {
+          drawBorder: false,
+          color: "rgba(29,140,248,0.1)",
+          zeroLineColor: "transparent",
+        },
+        ticks: {
+          padding: 20,
+          fontColor: "#9a9a9a",
+        },
+      },
+    ],
+  },
+};
+
 let chart1_2_options_2 = {
   maintainAspectRatio: false,
   legend: {
@@ -164,7 +214,7 @@ let chartExample1 = {
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,
           pointRadius: 4,
-          data: [80, 70, 90, 70, 85, 60, 75, 60, 90, 80, 120, 100],
+          data: [4, 4.2, 4.5, 4.2, 4.3, 4.4, 4.5, 4.5, 4.3, 4.8, 9, 8],
         },
       ],
     };
@@ -260,7 +310,8 @@ let chartExample1 = {
     };
   },
   options: chart1_2_options,
-  options_2: chart1_2_options_2, 
+  options_2: chart1_2_options_2,
+  options_3: chart1_2_options_3,
 };
 
 // #########################################

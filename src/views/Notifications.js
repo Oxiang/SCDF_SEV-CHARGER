@@ -23,6 +23,7 @@ import sampleVideo from "../assets/video/car-video.mp4"
 // reactstrap components
 import {
   Row,
+  Col,
 } from "reactstrap";
 
 function Notifications() {
@@ -30,7 +31,9 @@ function Notifications() {
     <>
       <div className="content">
         <Row>
-          <VideoLooper source={sampleVideo} start={134.00} end={140.00}/>
+          <Col md="12">
+            <VideoLooper source={sampleVideo} start={0.00} end={10.00}/>
+          </Col>
         </Row>
       </div>
     </>

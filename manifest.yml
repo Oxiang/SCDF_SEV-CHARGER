@@ -1,0 +1,7 @@
+applications:
+  - name: sev charger
+memory: 64M
+path: build/
+buildpack: staticfile_buildpack 
+routes:
+  - route: sev-charger.au-syd.cf.appdomain.cloud/

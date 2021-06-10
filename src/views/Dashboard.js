@@ -55,7 +55,7 @@ function Dashboard(props) {
                 <Row>
                   <Col className="text-left" sm="6">
                     <h5 className="card-category">MQ-2 Gas Sensor</h5>
-                    <CardTitle tag="h2">Gas Level</CardTitle>
+                    <CardTitle tag="h2">Gas Level (CH4) / %</CardTitle>
                   </Col>
                   <Col sm="6">
                     <ButtonGroup
@@ -87,7 +87,7 @@ function Dashboard(props) {
                 <div className="chart-area">
                   <Line
                     data={chartExample1[bigChartData]}
-                    options={chartExample1.options}
+                    options={chartExample1.options_3}
                   />
                 </div>
               </CardBody>
