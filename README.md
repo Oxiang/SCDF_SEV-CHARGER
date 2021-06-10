@@ -7,11 +7,11 @@ The current web application has been hosted in IBM cloud Foundry: https://sev-ch
 
 ## What does this repository contain?
 
-Web Application that live streams the gas (CH4 levels) and temperature sensors value, the warning level, the video feed for IR and RBG as well as the location.
+Web Application that live streams the gas (CH4 levels) and temperature sensors value, the warning level, the video feed for IR and RBG as well as the location. To assist the first respondent, the details of the vehicle can be found on the application - ranging from battery placement, vehicle model and voltage source.
 
 ## How to use?
 
-Pull over the entire repository, make a copy of the .env file and populate it with the Google API key. 
+Pull over the entire repository, make a copy of the .env file and populate it with the Google API key. Please activate Google Javascript Map API beforehand.
 
 Subsequently, install all the packages and run start
 
@@ -56,8 +56,12 @@ The overall architecture is broken down into three different segments: Onsite, I
 
 ## Livefeed
 
-![image-architecture](image/livefeed.jpg)
+![image-livefeed](image/livefeed.jpg)
 
 ## Map
 
-![image-architecture](image/map.jpg)
+![image-map](image/map.jpg)
+
+## Details
+
+![image-details](image/details.jpg)
