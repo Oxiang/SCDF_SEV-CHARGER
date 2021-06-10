@@ -1,6 +1,10 @@
 # SCDF_SEV-CHARGER
 For SCDF Hackathon 2021
 
+## Website
+
+The current web application has been hosted in IBM cloud Foundry: https://sev-charger.au-syd.cf.appdomain.cloud/
+
 ## What does this repository contain?
 
 Web Application that live streams the gas (CH4 levels) and temperature sensors value, the warning level, the video feed for IR and RBG as well as the location.
