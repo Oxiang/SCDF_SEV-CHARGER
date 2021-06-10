@@ -15,11 +15,12 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useEffect } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // react plugin used to create charts
 import { Line } from "react-chartjs-2";
+import NotificationAlert from "react-notification-alert";
 
 // reactstrap components
 import {
@@ -45,9 +46,66 @@ function Dashboard(props) {
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
+
+  const notificationAlertRef = React.useRef(null);
+  const notify = (place) => {
+    var options = {};
+    options = {
+      place: place,
+      message: (
+        <div>
+          <div>
+            <b>Fire Detected</b> - at 739A Bedok Reservoir Rd, Singapore 471739
+          </div>
+        </div>
+      ),
+      type: "warning",
+      icon: "tim-icons icon-bell-55",
+      autoDismiss: 4,
+    };
+    notificationAlertRef.current.notificationAlert(options);
+  };
+  const runwayNotify = (place) => {
+    var options = {};
+    options = {
+      place: place,
+      message: (
+        <div>
+          <div>
+            <b>Thermal Runway</b> - at 739A Bedok Reservoir Rd, Singapore 471739
+          </div>
+        </div>
+      ),
+      type: "danger",
+      icon: "tim-icons icon-bell-55",
+      autoDismiss: 4,
+    };
+    notificationAlertRef.current.notificationAlert(options);
+  }
+
+  useEffect(() => {
+    const fireAlert = setTimeout(() => {
+      // After 5 seconds set the show value to false
+      notify("tr")
+    }, 5000)
+
+    const runwayAlert = setTimeout(() => {
+      // After 3 seconds set the show value to false
+      runwayNotify("tr")
+    }, 10000)
+
+    return () => {
+      clearTimeout(fireAlert)
+      clearTimeout(runwayAlert)
+    }
+  }, []);
+
   return (
     <>
       <div className="content">
+        <div className="react-notification-alert-container">
+          <NotificationAlert ref={notificationAlertRef} />
+        </div>
         <Row>
           <Col xs="12">
             <Card className="card-chart">

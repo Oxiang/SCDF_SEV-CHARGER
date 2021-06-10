@@ -19,6 +19,7 @@ import Dashboard from "views/Dashboard.js";
 // import Icons from "views/Icons.js";
 import GooogleMap from "views/Map.js";
 import Notifications from "views/Notifications.js";
+import Details from "views/Details.js"
 
 var routes = [
   {
@@ -43,6 +44,14 @@ var routes = [
     rtlName: "خرائط",
     icon: "tim-icons icon-pin",
     component: GooogleMap,
+    layout: "/admin",
+  },
+  {
+    path: "/icons",
+    name: "Details",
+    rtlName: "خرائط",
+    icon: "tim-icons icon-notes",
+    component: Details,
     layout: "/admin",
   },
   // {
