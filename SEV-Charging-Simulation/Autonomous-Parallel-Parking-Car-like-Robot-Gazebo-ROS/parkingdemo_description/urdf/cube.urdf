@@ -1,0 +1,25 @@
+<robot name="cube">
+  <link name="cube_link">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.411" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://parkingdemo_description/meshes/cube.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://parkingdemo_description/meshes/cube.dae" />
+      </geometry>
+    </collision>
+  </link>   
+  <gazebo reference="cube">
+    <material>Gazebo/Red</material>
+    <static>true</static>
+  </gazebo>
+</robot>

@@ -36,9 +36,11 @@ Including the escalation of a thermal runaway from the battery. Firefighters can
 Youtube Link: https://www.youtube.com/watch?v=9GieWnIiTo8
 
 ## What does this repository contain?
-
+### Dashboard
 Web Application that live streams the gas (CH4 levels) and temperature sensors value, the warning level, the video feed for IR and RBG as well as the location. To assist the first respondent, the details of the vehicle can be found on the application - ranging from battery placement, vehicle model and voltage source.
-
+### Simulation
+A Gazebo physics simulation of the EV Charger is also included to simulate the physical flow of the hardware.
+![simulation-description](image/carfire.png)
 ## Getting Started
 
 Pull over the entire repository, make a copy of the .env file and populate it with the Google API key. Please activate Google Javascript Map API beforehand.
