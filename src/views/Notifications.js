@@ -15,25 +15,57 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useState } from "react";
 // react plugin for creating notifications over the dashboard
 import VideoLooper from "react-video-looper"
-import sampleVideo from "../assets/video/car-video.mp4"
+// import sampleVideo from "../assets/video/car-video.mp4"
+import rgb_feed from "../assets/video/rbg_cam.mp4"
+import thermal_feed from "../assets/video/thermal_cam.mp4"
 
 // reactstrap components
 import {
   Row,
   Col,
+  ButtonToggle,
 } from "reactstrap";
 
 function Notifications() {
+
+  const [feed, SetFeed] = useState(true)
+  
+  const changeFeed = () => {
+    SetFeed(!feed)
+  }
+
+
   return (
     <>
       <div className="content">
         <Row>
           <Col md="12">
-            <VideoLooper source={sampleVideo} start={0.00} end={10.00}/>
+            <ButtonToggle
+              onClick={() => changeFeed()}
+              color="info"
+              size="lg"
+              block
+            >
+              Change Feed
+            </ButtonToggle>
           </Col>
+        </Row>
+        <Row>
+          
+            {/* <VideoLooper source={sampleVideo} start={0.00} end={10.00}/> */}
+          {feed ?
+            <Col md="12">
+              <VideoLooper key={feed} source={rgb_feed} start={0.00} end={43.00} />
+            </Col>  
+              :
+            <Col md="12">
+              <VideoLooper key={feed} source={thermal_feed} start={0.00} end={43.00}/>
+            </Col>
+            }
+          
         </Row>
       </div>
     </>
