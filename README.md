@@ -93,9 +93,13 @@ The overall architecture is broken down into three different segments: Onsite, I
 
 ![image-architecture](image/homepage.jpg)
 
-## Livefeed
+## RGB Livefeed
 
 ![image-livefeed](image/livefeed.jpg)
+
+## Thermal Livefeed
+
+![image-livefeed](image/thermal.jpg)
 
 ## Map
 
@@ -111,7 +115,6 @@ The overall architecture is broken down into three different segments: Onsite, I
 - Tan Wai Hong
 - Jack Ng
 - Ian Lim
-- Goh Ai Fong
 
 ## Project RoadMap and Timeline
 
