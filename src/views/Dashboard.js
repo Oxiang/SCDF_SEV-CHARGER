@@ -43,6 +43,7 @@ function Dashboard(props) {
   const [bigChartData, setbigChartData] = React.useState("data1");
   const [secondChartData, setSecondchartData] = React.useState("data2");
   const [warningChartData, setWarningchartData] = React.useState("data3");
+  const [thirdChartData, setThirdchartData] = React.useState("data4");
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
@@ -83,22 +84,22 @@ function Dashboard(props) {
     notificationAlertRef.current.notificationAlert(options);
   }
 
-  useEffect(() => {
-    const fireAlert = setTimeout(() => {
-      // After 5 seconds set the show value to false
-      notify("tr")
-    }, 5000)
+  // useEffect(() => {
+  //   const fireAlert = setTimeout(() => {
+  //     // After 5 seconds set the show value to false
+  //     notify("tr")
+  //   }, 5000)
 
-    const runwayAlert = setTimeout(() => {
-      // After 3 seconds set the show value to false
-      runwayNotify("tr")
-    }, 10000)
+  //   const runwayAlert = setTimeout(() => {
+  //     // After 3 seconds set the show value to false
+  //     runwayNotify("tr")
+  //   }, 10000)
 
-    return () => {
-      clearTimeout(fireAlert)
-      clearTimeout(runwayAlert)
-    }
-  }, []);
+  //   return () => {
+  //     clearTimeout(fireAlert)
+  //     clearTimeout(runwayAlert)
+  //   }
+  // }, []);
 
   return (
     <>
@@ -106,6 +107,7 @@ function Dashboard(props) {
         <div className="react-notification-alert-container">
           <NotificationAlert ref={notificationAlertRef} />
         </div>
+
         <Row>
           <Col xs="12">
             <Card className="card-chart">
@@ -206,6 +208,53 @@ function Dashboard(props) {
               <CardHeader>
                 <Row>
                   <Col className="text-left" sm="6">
+                    <h5 className="card-category">Voltage Sensor</h5>
+                    <CardTitle tag="h2">Voltage Level / KV</CardTitle>
+                  </Col>
+                  <Col sm="6">
+                    <ButtonGroup
+                      className="btn-group-toggle float-right"
+                      data-toggle="buttons"
+                    >
+                      <Button
+                        tag="label"
+                        className={classNames("btn-simple", {
+                          active: thirdChartData === "data4",
+                        })}
+                        color="info"
+                        id="0"
+                        size="sm"
+                        onClick={() => setThirdchartData("data4")}
+                      >
+                        <span className="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                        {new Date().toISOString().split('T')[0]}
+                        </span>
+                        <span className="d-block d-sm-none">
+                          <i className="tim-icons icon-single-02" />
+                        </span>
+                      </Button>
+                    </ButtonGroup>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <div className="chart-area">
+                  <Line
+                    data={chartExample1[thirdChartData]}
+                    options={chartExample1.options_4}
+                  />
+                </div>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs="12">
+            <Card className="card-chart">
+              <CardHeader>
+                <Row>
+                  <Col className="text-left" sm="6">
                     <h5 className="card-category">Summary</h5>
                     <CardTitle tag="h2">Warning Level</CardTitle>
                   </Col>
@@ -246,6 +295,7 @@ function Dashboard(props) {
             </Card>
           </Col>
         </Row>
+
       </div>
     </>
   );
