@@ -83,7 +83,7 @@ function AdminNavbar(props) {
               </NavbarToggler>
             </div>
             <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
-              SEV-CHARGER
+              SEV-CHARGER [Car: BDK0938]
             </NavbarBrand>
           </div>
           <NavbarToggler onClick={toggleCollapse}>

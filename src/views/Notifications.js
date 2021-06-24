@@ -21,6 +21,7 @@ import VideoLooper from "react-video-looper"
 // import sampleVideo from "../assets/video/car-video.mp4"
 import rgb_feed from "../assets/video/rbg_cam.mp4"
 import thermal_feed from "../assets/video/thermal_cam.mp4"
+// import fire_feed from "../assets/video/car_fire.mp4"
 
 // reactstrap components
 import {
