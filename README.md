@@ -73,7 +73,8 @@ The overall architecture is broken down into three different segments: Onsite, I
 
 ### IBM Cloud Services
 
-- IBM Watson for IoT data storage
+- IBM Watson IoT for IoT data storage
+- IBM Watson Machine Learning for continuous training and deployment of machine learning models for severity prediction
 - IBM Cloud Foundry to host the React Web Application for live-streaming
 - IBM Cloud functions as a serverless backend to activate push notification
 - IBM Push Notification to send messages to Response Team on high warning level
